@@ -125,3 +125,16 @@ STATIC_URL = '/static/'
 # Config channels
 
 ASGI_APPLICATION = 'ChatServer.routing.application'
+
+
+# Config redis comunication
+# If have redis image in docker: docker run -p 6379:6379 -ti redis
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
