@@ -4,5 +4,5 @@ from .views import index, room
 
 urlpatterns = [
     re_path(r'^$', index, name='index'),
-    re_path(r'^(?P<room_name>[^/]+)/$', room, name='room')
+    re_path(r'^(?P<room_name>[^/]+)/(?P<type_chat>[^/]+)/$', room, name='room')
 ]

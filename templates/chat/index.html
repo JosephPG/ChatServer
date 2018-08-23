@@ -5,6 +5,9 @@
         <title>Chat Room</title>
     </head>
     <body>
+        ¿Tipo de chat? <br/>
+        <input type="radio" id="type-chat" name="type-chat" value="chatSync" checked="checked">Sync &nbsp
+        <input type="radio" id="type-chat" name="type-chat" value="chatAsync">Async<br/>
         ¿A que cuarto de chat dese unirse?
         <input id="room-name-input" type="text" size="100">
         <input id="room-name-submit" type="button" value="Entrar">
@@ -17,8 +20,9 @@
          }
 
          document.querySelector("#room-name-submit").onclick = function(e){
+             let typeChat = document.querySelector('input[name="type-chat"]:checked').value;
              let roomName = document.querySelector("#room-name-input").value;
-             window.location.pathname = '/chat/' + roomName + '/';
+             window.location.pathname = '/chat/' + roomName + '/' + typeChat + '/';
          }
         </script>
     </body>

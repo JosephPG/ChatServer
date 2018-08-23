@@ -3,5 +3,6 @@ from . import consumers
 
 
 websocket_urlpatterns = [
-    url(r'^ws/chat/(?P<room_name>[^/]+)/$', consumers.ChatConsumer),
+    url(r'^ws/chatSync/(?P<room_name>[^/]+)/$', consumers.ChatSyncConsumer),
+    url(r'^ws/chatAsync/(?P<room_name>[^/]+)/$', consumers.ChatAsyncConsumer),
 ]
